@@ -104,7 +104,7 @@
         <div class="content-section text-center">
             <h3 class="text-3xl font-bold text-gray-800 mb-6">Готові розпочати?</h3>
             <p class="text-gray-600 mb-8">Зв’яжіться з експертами Злата Фортуна, щоб отримати персоналізовану консультацію з фінансового планування.</p>
-            <a href="mailto:info@zlatafortuna.com" class="cta-button">Написати нам</a>
+            <a href="mailto:threecupsoftea@zlatafortuna.com" class="cta-button">Написати нам</a>
         </div>
     </section>
 
@@ -112,7 +112,7 @@
     <footer class="bg-gray-800 text-white py-6">
         <div class="content-section text-center">
             <p>&copy; 2025 Злата Фортуна. Усі права захищено.</p>
-            <p class="mt-2">info@zlatafortuna.com | +380 123 456 789</p>
+            <p class="mt-2">threecupsoftea@zlatafortuna.com | +380 969722735</p>
         </div>
     </footer>
 </body>
