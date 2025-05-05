@@ -4,133 +4,116 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Фінансове планування для стартапів | Злата Фортуна</title>
-    <script src="https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.production.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@babel/standalone@7.20.15/babel.min.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        body {
+            font-family: 'Arial', sans-serif;
         }
-        .animate-fadeInUp {
-            animation: fadeInUp 0.8s ease-out forwards;
+        .hero-section {
+            background: linear-gradient(to right, #1e3a8a, #3b82f6);
+            color: white;
         }
-        .hover-scale:hover {
-            transform: scale(1.05);
-            transition: transform 0.3s ease;
+        .content-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        .cta-button {
+            background-color: #f59e0b;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.375rem;
+            transition: background-color 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #d97706;
         }
     </style>
 </head>
 <body>
-    <div id="root"></div>
-    <script type="text/babel">
-        function Header() {
-            return (
-                <header className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-16">
-                    <div className="container mx-auto px-4 text-center">
-                        <h1 className="text-4xl md:text-5xl font-bold mb-4 animate-fadeInUp">
-                            Фінансове планування для стартапів
-                        </h1>
-                        <p className="text-xl mb-6 animate-fadeInUp" style={{ animationDelay: '0.2s' }}>
-                            25.04.2025
-                        </p>
-                        <p className="text-lg max-w-2xl mx-auto animate-fadeInUp" style={{ animationDelay: '0.4s' }}>
-                            Експерти Злата Фортуна діляться порадами щодо ефективного фінансового планування для стартапів.
-                        </p>
-                    </div>
-                </header>
-            );
-        }
+    <!-- Header -->
+    <header class="bg-white shadow">
+        <div class="content-section flex justify-between items-center py-4">
+            <h1 class="text-2xl font-bold text-gray-800">Злата Фортуна</h1>
+            <nav>
+                <a href="#home" class="text-gray-600 hover:text-blue-600 mx-4">Головна</a>
+                <a href="#services" class="text-gray-600 hover:text-blue-600 mx-4">Послуги</a>
+                <a href="#contact" class="text-gray-600 hover:text-blue-600 mx-4">Контакти</a>
+            </nav>
+        </div>
+    </header>
 
-        function TipsSection() {
-            const tips = [
-                {
-                    title: "Створіть реалістичний бюджет",
-                    description: "Визначте ключові витрати, включаючи операційні витрати, маркетинг та розробку продукту. Використовуйте інструменти прогнозування для оцінки доходів.",
-                },
-                {
-                    title: "Плануйте грошовий потік",
-                    description: "Регулярно відстежуйте вхідні та вихідні кошти. Створіть резервний фонд для непередбачених витрат.",
-                },
-                {
-                    title: "Залучайте інвестиції розумно",
-                    description: "Шукайте інвесторів, які поділяють ваше бачення. Уникайте надмірного розведення капіталу на ранніх етапах.",
-                },
-                {
-                    title: "Автоматизуйте фінанси",
-                    description: "Використовуйте сучасні інструменти, такі як QuickBooks або Xero, для автоматизації бухгалтерії та звітності.",
-                },
-            ];
+    <!-- Hero Section -->
+    <section class="hero-section py-20 text-center">
+        <div class="content-section">
+            <h2 class="text-4xl md:text-5xl font-extrabold mb-4">Фінансове планування для стартапів</h2>
+            <p class="text-lg md:text-xl mb-6">Експерти Злата Фортуна діляться порадами щодо ефективного управління фінансами для забезпечення успіху вашого стартапу.</p>
+            <p class="text-md italic">Дата: 25.04.2025</p>
+            <a href="#content" class="cta-button inline-block mt-6">Дізнайтесь більше</a>
+        </div>
+    </section>
 
-            return (
-                <section className="py-16 bg-gray-100">
-                    <div className="container mx-auto px-4">
-                        <h2 className="text-3xl font-bold text-center mb-12 animate-fadeInUp">
-                            Ключові поради від Злата Фортуна
-                        </h2>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                            {tips.map((tip, index) => (
-                                <div
-                                    key={index}
-                                    className="bg-white p-6 rounded-lg shadow-lg hover-scale animate-fadeInUp"
-                                    style={{ animationDelay: `${0.2 * (index + 1)}s` }}
-                                >
-                                    <h3 className="text-xl font-semibold mb-3 text-blue-600">{tip.title}</h3>
-                                    <p className="text-gray-600">{tip.description}</p>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </section>
-            );
-        }
+    <!-- Main Content -->
+    <section id="content" class="content-section py-12">
+        <h3 class="text-3xl font-bold text-gray-800 mb-6 text-center">Чому фінансове планування важливе для стартапів?</h3>
+        <p class="text-gray-600 mb-8">Фінансове планування є основою успішного стартапу. Воно допомагає передбачити витрати, оптимізувати ресурси та залучити інвесторів. Без чіткого фінансового плану навіть найперспективніші ідеї можуть зазнати невдачі через брак коштів або неефективне управління. Експерти Злата Фортуна підготували детальний гайд, який допоможе вам уникнути типових помилок та вибудувати стабільну фінансову стратегію.</p>
 
-        function CallToAction() {
-            return (
-                <section className="bg-blue-600 text-white py-16">
-                    <div className="container mx-auto px-4 text-center">
-                        <h2 className="text-3xl font-bold mb-4 animate-fadeInUp">
-                            Готові оптимізувати фінанси вашого стартапу?
-                        </h2>
-                        <p className="text-lg mb-8 animate-fadeInUp" style={{ animationDelay: '0.2s' }}>
-                            Зв’яжіться з експертами Злата Фортуна для індивідуальної консультації.
-                        </p>
-                        <a
-                            href="#"
-                            className="inline-block bg-white text-blue-600 font-semibold py-3 px-8 rounded-full hover:bg-gray-100 transition animate-fadeInUp"
-                            style={{ animationDelay: '0.4s' }}
-                        >
-                            Запланувати консультацію
-                        </a>
-                    </div>
-                </section>
-            );
-        }
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <!-- Card 1 -->
+            <div class="card bg-white p-6 rounded-lg shadow">
+                <h4 class="text-xl font-semibold text-gray-800 mb-4">Бюджетування</h4>
+                <p class="text-gray-600">Створення реалістичного бюджету дозволяє контролювати витрати та уникати фінансових криз. Визначте ключові статті витрат, такі як розробка продукту, маркетинг та зарплати, і розподіліть кошти з урахуванням пріоритетів.</p>
+            </div>
+            <!-- Card 2 -->
+            <div class="card bg-white p-6 rounded-lg shadow">
+                <h4 class="text-xl font-semibold text-gray-800 mb-4">Прогнозування доходів</h4>
+                <p class="text-gray-600">Прогнозуйте доходи на основі ринкових даних та аналізу конкурентів. Реалістичні прогнози допоможуть залучити інвесторів та планувати масштаби бізнесу.</p>
+            </div>
+            <!-- Card 3 -->
+            <div class="card bg-white p-6 rounded-lg shadow">
+                <h4 class="text-xl font-semibold text-gray-800 mb-4">Управління грошовими потоками</h4>
+                <p class="text-gray-600">Контролюйте cash flow, щоб забезпечити ліквідність. Оптимізуйте терміни платежів постачальникам та клієнтам, щоб уникнути касових розривів.</p>
+            </div>
+        </div>
 
-        function Footer() {
-            return (
-                <footer className="bg-gray-800 text-white py-8">
-                    <div className="container mx-auto px-4 text-center">
-                        <p>&copy; 2025 Злата Фортуна. Всі права захищено.</p>
-                    </div>
-                </footer>
-            );
-        }
+        <h3 class="text-3xl font-bold text-gray-800 mb-6 text-center">Поради від Злата Фортуна</h3>
+        <ul class="list-disc list-inside text-gray-600 mb-8 space-y-2">
+            <li><strong>Створіть фінансову модель:</strong> Використовуйте інструменти, такі як Excel або спеціалізоване ПЗ, для моделювання різних сценаріїв розвитку бізнесу.</li>
+            <li><strong>Залучайте експертів:</strong> Консультація з фінансовими аналітиками може значно підвищити точність ваших прогнозів.</li>
+            <li><strong>Будьте готові до змін:</strong> Ринок постійно змінюється, тому регулярно переглядайте та оновлюйте ваш фінансовий план.</li>
+            <li><strong>Інвестуйте в технології:</strong> Автоматизація фінансових процесів економить час і знижує ризик помилок.</li>
+            <li><strong>Фокусуйтесь на цінності:</strong> Переконайтеся, що ваші витрати спрямовані на створення цінності для клієнтів.</li>
+        </ul>
 
-        function App() {
-            return (
-                <div>
-                    <Header />
-                    <TipsSection />
-                    <CallToAction />
-                    <Footer />
-                </div>
-            );
-        }
+        <h3 class="text-3xl font-bold text-gray-800 mb-6 text-center">Як Злата Фортуна може допомогти?</h3>
+        <p class="text-gray-600 mb-8">Наша команда пропонує комплексні послуги з фінансового планування, включаючи аналіз ринку, розробку бюджетів, прогнозування та консультації з залучення інвестицій. Ми допоможемо вашому стартапу не лише вижити, але й процвітати в конкурентному середовищі.</p>
+        <div class="text-center">
+            <a href="#contact" class="cta-button">Зв’яжіться з нами</a>
+        </div>
+    </section>
 
-        const root = ReactDOM.createRoot(document.getElementById('root'));
-        root.render(<App />);
-    </script>
+    <!-- Contact Section -->
+    <section id="contact" class="bg-gray-100 py-12">
+        <div class="content-section text-center">
+            <h3 class="text-3xl font-bold text-gray-800 mb-6">Готові розпочати?</h3>
+            <p class="text-gray-600 mb-8">Зв’яжіться з експертами Злата Фортуна, щоб отримати персоналізовану консультацію з фінансового планування.</p>
+            <a href="mailto:info@zlatafortuna.com" class="cta-button">Написати нам</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="content-section text-center">
+            <p>&copy; 2025 Злата Фортуна. Усі права захищено.</p>
+            <p class="mt-2">info@zlatafortuna.com | +380 123 456 789</p>
+        </div>
+    </footer>
 </body>
 </html>
